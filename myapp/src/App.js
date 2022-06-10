@@ -1,13 +1,16 @@
 import './App.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-let name = "Bibek"
+import Header from './Header/Header'
+import Footer from './Footer/Footer'
+import Body from './Body/Body'
 
 function App() {
-    return ( <>
-      <h1 className="text-primary">Hello {name}</h1>
-    </> 
+    return ( < >
+        <Header title="Text Utility" />
+        <Body />
+        <Footer />
+        </> 
     );
 }
 export default App;
