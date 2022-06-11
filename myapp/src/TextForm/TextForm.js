@@ -2,20 +2,45 @@ import React,{useState} from 'react'
 import './TextForm.css'
 
 export default function TextForm(props) {
-    const [text,setText] = useState("Enter your text");
+  
+  const [text,setText] = useState("");
+
+  const handleUpClick = () => {
+    let newText = text.toUpperCase()
+    setText(newText)
+  }
+
+  const handleOnChnage = (event) => {
+    setText(event.target.value)
+    
+  }
+
+  const handleLowerClick = () => {
+    setText(text.toLowerCase())
+  } 
+
+  
     // text = "New Text"
 
-    // setText("New Text");
+    //setText("New Text");
   return (
     <>
         <div className="mb-3">
-                <label for="input Text" class="form-label"><h1>{props.heading}</h1></label>
-                <textarea className="form-control" value={text} id="input Text" rows="7"></textarea>
+                <label htmlFor="inputText" className="form-label"><h1>{props.heading}</h1></label>
+                <textarea className="form-control" value={text} onChange={handleOnChnage} id="input Text" rows="7"></textarea>
         </div>
+        <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Upper Case</button>
+        <button className="btn btn-primary mx-1" onClick={handleLowerClick}>Convert to Lower Case</button>
+        <br />
+        <br />
 
-        <button className="btn btn-primary">Convert to Upper Case</button>
-        <br />
-        <br />
+        <div>
+          <h1>Your text summary: </h1>
+            {text.length} characters <br />
+            {text.split(" ").length} words
+
+         
+        </div>
     </>
     
   )
