@@ -6,7 +6,7 @@ export default function Body() {
   return (
     <>
       <div className="container">
-        <TextForm heading="Enter the TextForm"></TextForm>
+        <TextForm heading="Enter the TextForm from Kiriti"></TextForm>
       </div>
     </>
   );
